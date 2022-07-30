@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "496856195399",
+    "project_id": "shopx-daae8",
+    "storage_bucket": "shopx-daae8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:496856195399:android:26dad5efbfabe022e96c62",
+        "android_client_info": {
+          "package_name": "com.example.shopex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "496856195399-hkusmbetf5budt2dn3attnnq27m7ojlc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDy3YwBq0fDz-YcJiRl7cAqcDkniFoIPJI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "496856195399-hkusmbetf5budt2dn3attnnq27m7ojlc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
