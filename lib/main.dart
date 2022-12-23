@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -23,9 +24,25 @@ import 'package:shopex/core/view_model/productsize.dart';
 import 'package:shopex/views/screens/navigation.dart';
 import 'core/models/cartproduct.dart';
 import 'core/models/sneakers.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  // If you're going to use other Firebase services in the background, such as Firestore,
+  // make sure you call `initializeApp` before using other Firebase services.
+  await Firebase.initializeApp();
+
+  print("Handling a background message: ${message.messageId}");
+}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  var initializationSettingsAndriod =
+      const AndroidInitializationSettings("app_icons");
+  var initSettings =
+      InitializationSettings(android: initializationSettingsAndriod);
+  await FlutterLocalNotificationsPlugin().initialize(
+    initSettings,
+  );
   await SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitDown, DeviceOrientation.portraitUp]);
   // FirebaseOptions options = const FirebaseOptions(
@@ -38,6 +55,7 @@ void main() async {
   await DataBaseService.data.read().then((value) {
     cart = value;
   });
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   runApp(const MyApp());
 }
 

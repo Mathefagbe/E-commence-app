@@ -10,6 +10,7 @@ import 'package:shopex/core/view_model/navigator.dart';
 import 'package:shopex/views/list_screen/list_screen.dart';
 
 import '../../core/models/cartproduct.dart';
+import '../../core/notification/notification.dart';
 
 class NavigationScreen extends StatefulWidget {
   const NavigationScreen({Key? key}) : super(key: key);
@@ -19,6 +20,16 @@ class NavigationScreen extends StatefulWidget {
 }
 
 class _NavigationScreenState extends State<NavigationScreen> {
+
+
+  @override
+  void initState() {
+    super.initState();
+    Token.token.getToken();
+    // AccessNoftification.fcm.getToken();
+    AccessNoftification.fcm.loadmessage();
+  }
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();

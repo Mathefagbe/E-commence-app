@@ -47,12 +47,18 @@ dependencies:
   path: ^1.8.0
   path_provider: ^2.0.11
   shimmer: ^2.0.0
-  flutter_slidable: 
+  flutter_slidable:
+  firebase_analytics:
+  firebase_messaging: ^13.1.0 
+  flutter_local_notifications: ^12.0.4 
   
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+dependency_overrides:
+  firebase_core_platform_interface: 4.5.1
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
